@@ -29,8 +29,8 @@ def layer_norm(input): % input: [N, F]
     normalized = (input - mean) / (variance + 1e-5)**0.5
     return normalized
 ```
+![20231128163800](https://github.com/jaycee-tian/Notes/assets/135324241/dbd2aa42-099f-4366-a496-1b8e5f6078b9)
 
-![x](pic/20231128163800.png）
 
 ## instance norm
 
@@ -49,9 +49,9 @@ def instance_norm(input): % input: [N, C, H, W]
     normalized = (input - mean) / (variance + 1e-5)**0.5
     return normalized
 ```
+![d67d6a0587a84a61895f88ecef32c53](https://github.com/jaycee-tian/Notes/assets/135324241/5bfbfd8e-2e76-4945-862b-24ea47fa8e59)
 
 
-![x](pic/d67d6a0587a84a61895f88ecef32c53.jpg)
 
 
 group norm 也是用在CV里的，和 instance norm 一样都考虑了通道，并且计算时也是只考虑单个样本。不过他会把通道分组，在每个分组内计算所有特征的均值。所以像是一种 layer norm （计算单个样本的所有特征）和 instance norm（计算单个样本的单个通道的所有特征）的一种折中。
@@ -66,8 +66,8 @@ def group_norm(input, num_groups):
     normalized = (groups - mean) / (variance + 1e-5)**0.5
     return normalized.reshape(N, C, H, W)
 ```
+![75ef0e4f575e1c5cbf8f5c21c02b165](https://github.com/jaycee-tian/Notes/assets/135324241/c1fe70ba-b943-4090-a992-e8bd01031e72)
 
-![](pic/75ef0e4f575e1c5cbf8f5c21c02b165.jpg)
 
 使用场景上，instance norm一般用于风格迁移，而group norm一般用于检测，分割，视频分类任务。
 
@@ -84,5 +84,5 @@ def batch_norm(input): % input: [N, C, H, W]
 ```
 
 batch norm 一般会用在图像分类任务上，以及 batch_size 比较大的情况。
+![1762d9a08c2578a5bdf405c6dc0daf0](https://github.com/jaycee-tian/Notes/assets/135324241/73ac0ee2-732d-4ee7-93fd-d417aaea258a)
 
-![x](1762d9a08c2578a5bdf405c6dc0daf0.jpg)

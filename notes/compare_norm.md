@@ -1,11 +1,11 @@
 # 【个人理解】batch norm, layer norm, instance norm, group norm
 
-一般来说，layer norm是用在NLP中，input的维度是`[N, F]`。
+一般来说，layer norm 用在NLP任务中，input的维度是`[N, F]`。
 
 - `N`：批量大小。
 - `F`：特征数量。
 
-而其他三种norm是用在CV中，input的维度是`[N, C, H, W]`。
+而其他三种norm用在CV任务中，input的维度是`[N, C, H, W]`。
 
 - `N`：批量大小（Batch Size），即一批中的样本数量。
 - `C`：通道数（Channels），对于图像来说，例如RGB图像有3个通道。

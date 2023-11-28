@@ -1,3 +1,5 @@
+# 【个人理解】batch norm, layer norm, instance norm, group norm
+
 一般来说，layer norm是用在NLP中，input的维度是`[N, F]`。
 
 - `N`：批量大小。

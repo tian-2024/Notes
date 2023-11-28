@@ -1,6 +1,6 @@
 # Notes
 
-1. [【personal understanding】batch norm, layer norm, instance norm, group norm](notes/zh/compare_norm.md)
+1. [【personal understanding】batch norm, layer norm, instance norm, group norm](notes/compare_norm.md)
 
 
 # 笔记
